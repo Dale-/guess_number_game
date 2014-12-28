@@ -12,6 +12,7 @@ describe('GameRule', function() {
       expect(result).toBe(false);
     });
 
+
     it('it should be return false of hasRepeatNumberArray', function() {
 
       var GameRule = require('../../js/game-rule/game-rule');

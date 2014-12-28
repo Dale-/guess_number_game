@@ -1,9 +1,8 @@
 function GameRule() {
-
 }
 
-GameRule.IsFourNotRepeat = function() {
-  return false;
+GameRule.IsFourNotRepeat = function(array) {
+  return true;
 };
 
 GameRule.getAorBorC = function() {

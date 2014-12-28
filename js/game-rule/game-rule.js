@@ -18,7 +18,15 @@ GameRule.IsFourNotRepeat = function(array) {
 };
 
 GameRule.getAorBorC = function(fourNumber, index, value) {
-  return 'C';
+  if(_.contains(fourNumber, value)) {
+    if(fourNumber.indexOf(value) === index) {
+      return 'A';
+    } else {
+      return 'B';
+    }
+  } else {
+    return 'C';
+  }
 };
 
 GameRule.getScore = function() {

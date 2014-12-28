@@ -6,6 +6,7 @@ function Input() {
 }
 
 Input.prototype.consoleInput = function() {
+  var score = '';
   var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -15,14 +16,14 @@ Input.prototype.consoleInput = function() {
 
     this.inputArray = Input.invertIntType(answer.split(''));
 
-    var score = GameRule.getScore([1,2,3,4], this.inputArray);
+    score = GameRule.getScore([1,2,3,4], this.inputArray);
 
     console.log(score);
     //process.exit(0);
     //rl.close();
 
   });
-  return this.inputArray;
+  return score;
 };
 
 Input.invertIntType = function(array) {

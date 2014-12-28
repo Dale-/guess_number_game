@@ -1,18 +1,20 @@
+var _ = require('lodash');
+
 function FourNumber() {
   this.fourNumber = [];
 }
 
 FourNumber.formFourNumber = function() {
 
-  // while(this.fourNumber.length < 4) {
-  //   var formNumber = Math.floor(Math.random() * 10);
-  // }
-  // for(var i = 0; i < 4 ; i++) {
-  //
-  // }
-  // this.formArray.push(Math.floor(Math.random() * 10));
-  // console.log(this.formArray);
-  // return this.formFourNumber;
+  this.fourNumber=[0,1,2,3,4,5,6,7,8,9];
+
+  this.fourNumber.sort(function arrSort(a,b){
+    return Math.random() > 0.5 ? a-b : b-a;
+  });
+
+  this.fourNumber.length = 4;
+
+  return this.fourNumber;
 };
 
 module.exports = FourNumber;

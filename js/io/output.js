@@ -5,3 +5,5 @@ function Output(score) {
 Output.prototype.show = function() {
 
 };
+
+module.exports = Output;

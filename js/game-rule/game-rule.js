@@ -17,3 +17,5 @@ GameRule.getScore = function() {
 GameRule.isSixTimes = function() {
   return false;
 };
+
+module.exports = GameRule;

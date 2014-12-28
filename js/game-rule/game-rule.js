@@ -1,7 +1,9 @@
 var _ = require('lodash');
 
+
 function GameRule() {
 }
+
 
 GameRule.IsFourNotRepeat = function(array) {
   var orderArray = array.sort();
@@ -15,17 +17,17 @@ GameRule.IsFourNotRepeat = function(array) {
   return false;
 };
 
+
 GameRule.getAorBorC = function(fourNumber, index, value) {
   return _.contains(fourNumber, value) ?
                    (fourNumber.indexOf(value) === index ? 'A' : 'B'): 'C';
 };
 
-GameRule.getScore = function(formArray, inputArray) {
 
+GameRule.getScore = function(formArray, inputArray) {
   var score = { A: 0, B: 0 };
 
   _.forEach(inputArray, function(number) {
-
     switch(GameRule.getAorBorC(formArray, inputArray.indexOf(number), number)) {
       case 'A':
         score.A ++;
@@ -39,7 +41,6 @@ GameRule.getScore = function(formArray, inputArray) {
         break;
     }
   });
-
   return score.A + 'A' + score.B + 'B';
 };
 

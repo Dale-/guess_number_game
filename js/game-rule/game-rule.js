@@ -17,7 +17,7 @@ GameRule.IsFourNotRepeat = function(array) {
   return false;
 };
 
-GameRule.getAorBorC = function() {
+GameRule.getAorBorC = function(fourNumber, index, value) {
   return C;
 };
 

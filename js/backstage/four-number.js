@@ -1,3 +1,3 @@
 function FourNumber() {
-  
+  this.fourNumber = [];
 }

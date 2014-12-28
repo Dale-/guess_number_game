@@ -1,4 +1,5 @@
 jest.dontMock('../../js/game-rule/game-rule');
+jest.dontMock('lodash');
 
 describe('GameRule', function() {
 
@@ -28,6 +29,7 @@ describe('GameRule', function() {
   describe('.getAorBorC', function() {
 
     it('it should be return A', function() {
+
       var result = GameRule.getAorBorC(commonArray, 0, 2);
       expect(result).toBe('A');
     });

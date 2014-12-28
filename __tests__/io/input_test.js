@@ -1,4 +1,5 @@
 jest.dontMock('lodash');
+jest.dontMock('readline');
 jest.dontMock('../../js/io/input');
 jest.dontMock('../../js/backstage/four-number');
 
@@ -8,12 +9,16 @@ describe('Input', function() {
   beforeEach(function() {
     Input = require('../../js/io/input');
   });
-
+  //
   // describe('#consoleInput', function() {
   //
   //   it('it should be return one array that length equal four', function() {
+  // 
+  //     answer.mockReturnValue('1234');
   //
-  //     var result = FourNumber.formFourNumber();
+  //     var input = new Input();
+  //
+  //     var result = input.consoleInput();
   //
   //     expect(result.length).toBe(4);
   //   });

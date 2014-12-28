@@ -18,7 +18,7 @@ Input.prototype.consoleInput = function() {
     var score = GameRule.getScore([1,2,3,4], this.inputArray);
 
     console.log(score);
-    process.exit(0);
+    //process.exit(0);
     //rl.close();
 
   });

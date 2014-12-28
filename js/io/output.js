@@ -1,9 +1,8 @@
-function Output(score) {
-  this.score = score;
+function Output() {
 }
 
-Output.prototype.show = function() {
-
+Output.show = function(scroe) {
+  return 'Congratulation';
 };
 
 module.exports = Output;

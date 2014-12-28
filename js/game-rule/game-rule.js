@@ -23,12 +23,9 @@ GameRule.getAorBorC = function(fourNumber, index, value) {
                    (fourNumber.indexOf(value) === index ? 'A' : 'B'): 'C';
 };
 
-GameRule.getScore = function() {
-  return '1A0B';
+GameRule.getScore = function(formArray, inputArray) {
+  return '4A0B';
 };
 
-GameRule.isSixTimes = function() {
-  return false;
-};
 
 module.exports = GameRule;

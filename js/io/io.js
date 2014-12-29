@@ -13,6 +13,7 @@ function IO() {
 }
 
 IO.consoleInput = function() {
+
   times ++;
 
   rl.question('Please input four number : \n', function(answer) {
@@ -21,12 +22,10 @@ IO.consoleInput = function() {
   if(GameRule.IsFourNotRepeat(this.inputArray)) {
     IO.showRepeat();
   }
-
   var score = GameRule.getScore([1,2,3,4], this.inputArray);
 
   score === '4A0B' ? IO.showCongratulation() : (times
         === 6 ? IO.showGameOver() : IO.showScore(score));
-
   });
 };
 
@@ -51,7 +50,6 @@ IO.showGameOver = function() {
 };
 
 IO.invertIntType = function(array) {
-
   for(var i = 0; i < array.length; i++) {
     array[i] = parseInt(array[i]);
   }

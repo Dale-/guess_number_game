@@ -11,7 +11,6 @@ describe('GameRule', function() {
     commonArray = [2,4,6,8];
   });
 
-
   describe('.IsFourNotRepeat', function() {
 
     it('it should be return false of notRepeatNumberArray', function() {

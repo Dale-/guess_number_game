@@ -39,7 +39,14 @@ Input.consoleInput = function() {
     Input.consoleInput();
   }
 
+  // (score === '4A0B') ? Input.showCongratulation() : Input.showScore();
+
   });
+};
+
+Input.showScore = function() {
+  console.log(score);
+  Input.consoleInput();
 };
 
 Input.showCongratulation = function() {

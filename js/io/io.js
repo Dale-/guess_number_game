@@ -8,58 +8,57 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-function Input() {
+function IO() {
   this.inputArray = [];
 }
 
-Input.consoleInput = function() {
+IO.consoleInput = function() {
   times ++;
 
   rl.question('Please input four number : \n', function(answer) {
-  this.inputArray = Input.invertIntType(answer.split(''));
+  this.inputArray = IO.invertIntType(answer.split(''));
 
   if(GameRule.IsFourNotRepeat(this.inputArray)) {
-    console.log('Repeat!');
-    Input.consoleInput();
-    return;
+    IO.showRepeat();
   }
 
   var score = GameRule.getScore([1,2,3,4], this.inputArray);
 
   if(score === '4A0B') {
-    console.log('Congratulation!');
-    process.exit(0);
-    return ;
+    IO.showCongratulation();
   }else {
     if(times === 6) {
-      console.log('Game Over');
-      process.exit(0);
+      IO.showGameOver();
     }
-    console.log(score);
-    Input.consoleInput();
+    IO.showScore(score);
   }
 
-  // (score === '4A0B') ? Input.showCongratulation() : Input.showScore();
+  //(score === '4A0B') ? (Input.showCongratulation()) : (Input.showScore());
 
   });
 };
 
-Input.showScore = function() {
-  console.log(score);
-  Input.consoleInput();
+IO.showRepeat = function() {
+  console.log('Repeat!');
+  IO.consoleInput();
 };
 
-Input.showCongratulation = function() {
+IO.showScore = function(score) {
+  console.log(score);
+  IO.consoleInput();
+};
+
+IO.showCongratulation = function() {
   console.log('Congratulation!');
   process.exit(0);
 };
 
-Input.showGameOver = function() {
+IO.showGameOver = function() {
   console.log('Game Over!');
   process.exit(0);
 };
 
-Input.invertIntType = function(array) {
+IO.invertIntType = function(array) {
 
   for(var i = 0; i < array.length; i++) {
     array[i] = parseInt(array[i]);
@@ -67,4 +66,4 @@ Input.invertIntType = function(array) {
   return array;
 };
 
-module.exports = Input;
+module.exports = IO;

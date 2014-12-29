@@ -1,27 +1,35 @@
 var Input = require('./io/input');
-var Onput = require('./io/output');
+//var Output = require('./io/output');
+//var flow = require('nimble');
 
-main();
+// main();
 
-function main() {
+(function main() {
 
-  // var times = 1;
-  //
-  // while(times) {
-  //   var input = new Input();
-  //   var score = input.consoleInput();
-  //   if(score === '4A0B'){
-  //     Output.show('Congratulation');
-  //     break;
-  //   } else if(times === 6) {
-  //     Output.show('Game Over');
-  //     break;
-  //   } else {
-  //     Output.show(score);
-  //   }
-  //   times ++;
-  // }
+  //var times = 1;
+  // var score;
+  // var input = new Input();
+  // var req = null;
+  // var res = null;
 
-}
+ // while(times) {
+  //  flow.series([
 
-exports.main = main;
+       Input.consoleInput();
+      //  console.log('-------'+score);
+      //  Output.show(score);
+
+    // function (callback) {
+    //   if(times === 6){
+    //     Output.show('Game Over');
+    //     process.exit(0);
+    //   }
+    // },
+    // function (callback) {
+    //   times ++;
+    // }
+    //]);
+ //};
+})();
+
+//exports.main = main;

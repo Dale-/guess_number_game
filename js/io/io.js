@@ -24,16 +24,8 @@ IO.consoleInput = function() {
 
   var score = GameRule.getScore([1,2,3,4], this.inputArray);
 
-  if(score === '4A0B') {
-    IO.showCongratulation();
-  }else {
-    if(times === 6) {
-      IO.showGameOver();
-    }
-    IO.showScore(score);
-  }
-
-  //(score === '4A0B') ? (Input.showCongratulation()) : (Input.showScore());
+  score === '4A0B' ? IO.showCongratulation() : (times
+        === 6 ? IO.showGameOver() : IO.showScore(score));
 
   });
 };

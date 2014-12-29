@@ -12,8 +12,7 @@ GameRule.IsFourNotRepeat = function(array) {
     if (orderArray[i] === orderArray[i+1])
     {
       return true;
-    }
-  }
+    }}
   return false;
 };
 

@@ -1,4 +1,4 @@
-jest.dontMock('../../js/game-rule/game-rule');
+jest.dontMock('../../scripts/game-rule/game-rule');
 jest.dontMock('lodash');
 
 describe('GameRule', function() {
@@ -7,7 +7,7 @@ describe('GameRule', function() {
   var commonArray;
 
   beforeEach(function() {
-    GameRule = require('../../js/game-rule/game-rule');
+    GameRule = require('../../scripts/game-rule/game-rule');
     commonArray = [2,4,6,8];
   });
 

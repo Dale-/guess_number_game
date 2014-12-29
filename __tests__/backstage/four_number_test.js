@@ -1,5 +1,5 @@
 jest.dontMock('lodash');
-jest.dontMock('../../js/backstage/four-number');
+jest.dontMock('../../scripts/backstage/four-number');
 
 describe('FourNumber', function() {
 
@@ -7,7 +7,7 @@ describe('FourNumber', function() {
 
     it('it should be return one array that length equal four', function() {
 
-      var FourNumber = require('../../js/backstage/four-number');
+      var FourNumber = require('../../scripts/backstage/four-number');
       var result = FourNumber.formFourNumber();
 
       expect(result.length).toBe(4);
@@ -15,7 +15,7 @@ describe('FourNumber', function() {
 
     it('it should be return EachElementType of array is Number ', function() {
 
-      var FourNumber = require('../../js/backstage/four-number');
+      var FourNumber = require('../../scripts/backstage/four-number');
       var result = FourNumber.formFourNumber();
 
       var isAllTypeNumber = result.every(function(elem) {

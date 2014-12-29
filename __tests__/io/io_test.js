@@ -1,13 +1,13 @@
 jest.dontMock('lodash');
 jest.dontMock('readline');
-jest.dontMock('../../js/io/io');
+jest.dontMock('../../scripts/io/io');
 
 describe('IO', function() {
 
   var IO;
   var array;
   beforeEach(function() {
-    IO = require('../../js/io/io');
+    IO = require('../../scripts/io/io');
     array = ['2','4','6','8'];
   });
 

@@ -21,6 +21,7 @@ IO.consoleInput = function() {
 
   if(GameRule.IsFourNotRepeat(this.inputArray)) {
     IO.showRepeat();
+    return;
   }
   var score = GameRule.getScore([1,2,3,4], this.inputArray);
 

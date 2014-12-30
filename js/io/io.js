@@ -10,7 +10,6 @@ var rl = readline.createInterface({
 
 function IO() {
   this.inputArray = [];
-  this.formFourNumber = [];
 }
 
 IO.consoleInput = function() {
@@ -22,11 +21,11 @@ IO.consoleInput = function() {
 
   if(GameRule.IsFourNotRepeat(this.inputArray)) {
     IO.showRepeat();
-    return;
   }
-  var score = GameRule.getScore(IO.formFourNumber, this.inputArray);
+  var score = GameRule.getScore([1,2,3,4], this.inputArray);
 
-  score === '4A0B' ? IO.showCongratulation() : (times === 6 ? IO.showGameOver() : IO.showScore(score));
+  score === '4A0B' ? IO.showCongratulation() : (times
+        === 6 ? IO.showGameOver() : IO.showScore(score));
   });
 };
 

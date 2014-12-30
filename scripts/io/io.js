@@ -16,8 +16,15 @@ function IO() {
 IO.consoleInput = function() {
 
   times ++;
+var validate = new Promise(function(){
+
+});
+var getScore = function(){
+
+};
 
   rl.question('Please input four number : \n', function(answer) {
+
   this.inputArray = IO.invertIntType(answer.split(''));
 
   if(GameRule.IsFourNotRepeat(this.inputArray)) {
@@ -26,8 +33,15 @@ IO.consoleInput = function() {
   }
   var score = GameRule.getScore(IO.formFourNumber, this.inputArray);
 
-  score === '4A0B' ? IO.showCongratulation() : (times === 6 ? IO.showGameOver() : IO.showScore(score));
+  if(score === '4A0B') {
+    IO.showCongratulation();
+  } else {
+    a = times === 6 ? IO.showGameOver() : IO.showScore(score);
+  }
+
+  // score === '4A0B' ? IO.showCongratulation() : (times === 6 ? IO.showGameOver() : IO.showScore(score));
   });
+
 };
 
 IO.showRepeat = function() {

@@ -17,35 +17,18 @@ GameRule.IsFourNotRepeat = function(array) {
 };
 
 
-GameRule.getAorBorC = function(fourNumber, index, value) {
-
-  if(_.contains(fourNumber, value)) {
-    return fourNumber.indexOf(value) === index ? 'A' : 'B';
-  } else {
-    return '';
-  }
-  // return _.contains(fourNumber, value) ?
-  //                  (fourNumber.indexOf(value) === index ? 'A' : 'B'): 'C';
-};
-
-
 GameRule.getScore = function(formArray, inputArray) {
   var score = { A: 0, B: 0 };
 
-  _.forEach(inputArray, function(number) {
-    switch(GameRule.getAorBorC(formArray, inputArray.indexOf(number), number)) {
-      case 'A':
-        score.A ++;
-        break;
-
-      case 'B':
-        score.B ++;
-        break;
-
-      default:
-        break;
+  for(var i = 0; i < inputArray.length; i++) {
+    if(formArray[i] === inputArray[i]) {
+      score.A ++;
+      continue;
     }
-  });
+    if(_.contains(formArray,inputArray[i])) {
+      score.B ++;
+    }
+  }
   return score.A + 'A' + score.B + 'B';
 };
 

@@ -38,9 +38,9 @@ describe('GameRule', function() {
       expect(result).toBe('B');
     });
 
-    it('it should be return C', function() {
+    it('it should be return ', function() {
       var result = GameRule.getAorBorC(commonArray, 0, 1);
-      expect(result).toBe('C');
+      expect(result).toBe('');
     });
   });
 

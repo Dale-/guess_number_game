@@ -8,7 +8,6 @@ var rl = readline.createInterface({
 });
 
 function IO() {
-  this.inputArray = [];
   this.formFourNumber = [];
 }
 
@@ -20,14 +19,14 @@ IO.startGame = function(times) {
   rl.on('line', function(input) {
 
     times ++;
-    this.inputArray = IO.invertIntType(_.toArray(input));
+    var inputArray = IO.invertIntType(_.toArray(input));
 
-    if(GameRule.IsFourNotRepeat(this.inputArray)) {
+    if(GameRule.IsFourNotRepeat(inputArray)) {
       console.log('Repeat!\nPlease input four number:');
       return;
     }
 
-    var score = GameRule.getScore(IO.formFourNumber, this.inputArray);
+    var score = GameRule.getScore(IO.formFourNumber, inputArray);
 
     if(score === '4A0B') {
       console.log('Congratulation!');

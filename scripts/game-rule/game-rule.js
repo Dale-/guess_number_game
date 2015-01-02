@@ -17,7 +17,6 @@ GameRule.IsFourNotRepeat = function(array) {
 GameRule.getScore = function(formArray, inputArray) {
 
   var score = { A: 0, B: 0 };
-  console.log(formArray, inputArray);
 
   for(var i = 0; i < inputArray.length; i++) {
     if(formArray[i] === inputArray[i]) {

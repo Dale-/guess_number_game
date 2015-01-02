@@ -27,14 +27,14 @@ IO.startGame = function(times) {
       return;
     }
 
-    var score = GameRule.getScore([4,3,8,1], this.inputArray);
+    var score = GameRule.getScore(IO.formFourNumber, this.inputArray);
 
     if(score === '4A0B') {
       console.log('Congratulation!');
       process.exit(0);
 
     } else if(times === 6) {
-      console.log('Game Over!');
+      console.log('Correct : ' + IO.formFourNumber + '\nGame Over!');
       process.exit(0);
 
     } else {

@@ -2,15 +2,15 @@ var _ = require('lodash');
 var readline = require('readline');
 var GameRule = require('../game-rule/game-rule');
 
-function IO() {
-  this.inputArray = [];
-  this.formFourNumber = [];
-}
-
 var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
+function IO() {
+  this.inputArray = [];
+  this.formFourNumber = [];
+}
 
 IO.startGame = function(times) {
 

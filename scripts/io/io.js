@@ -14,16 +14,16 @@ function IO() {
 
 IO.startGame = function(times) {
 
-  times ++;
+
   console.log('Please input four number:');
 
   rl.on('line', function(input) {
 
+    times ++;
     this.inputArray = IO.invertIntType(_.toArray(input));
 
     if(GameRule.IsFourNotRepeat(this.inputArray)) {
-      console.log('Repeat!');
-      IO.startGame(times);
+      console.log('Repeat!\nPlease input four number:');
       return;
     }
 
@@ -35,11 +35,11 @@ IO.startGame = function(times) {
 
     } else if(times === 6) {
       console.log('Game Over!');
-      rl.close();
+      process.exit(0);
 
     } else {
       console.log(score);
-      IO.startGame(times);
+      console.log('Please input four number:');
     }
   });
 };

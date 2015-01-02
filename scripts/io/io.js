@@ -7,21 +7,14 @@ function IO() {
   this.formFourNumber = [];
 }
 
-// IO.input = function() {
-
-  var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-//   return rl;
-// };
-
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 IO.startGame = function(times) {
 
-  // rl = IO.input();
   times ++;
-
   console.log('Please input four number:');
 
   rl.on('line', function(input) {
@@ -34,26 +27,25 @@ IO.startGame = function(times) {
       return;
     }
 
+    var score = GameRule.getScore([4,3,8,1], this.inputArray);
 
-  var score = GameRule.getScore([4,3,8,1], this.inputArray);
-  //console.log('-------' + this.inputArray + '----------' + score);
+    if(score === '4A0B') {
+      console.log('Congratulation!');
+      process.exit(0);
 
-  if(score === '4A0B') {
-    console.log('Congratulation!');
-    process.exit(0);
+    } else if(times === 6) {
+      console.log('Game Over!');
+      rl.close();
 
-  } else if(times === 6) {
-    console.log('Game Over!');
-    rl.close();
-
-  } else {
-    console.log(score);
-    IO.startGame(times);
-  }
+    } else {
+      console.log(score);
+      IO.startGame(times);
+    }
   });
 };
 
 IO.invertIntType = function(array) {
+
   for(var i = 0; i < array.length; i++) {
     array[i] = parseInt(array[i]);
   }

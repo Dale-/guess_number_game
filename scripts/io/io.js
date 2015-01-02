@@ -2,66 +2,55 @@ var _ = require('lodash');
 var readline = require('readline');
 var GameRule = require('../game-rule/game-rule');
 
-var times = 0;
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
 function IO() {
   this.inputArray = [];
   this.formFourNumber = [];
 }
 
-IO.consoleInput = function() {
+// IO.input = function() {
 
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+//   return rl;
+// };
+
+
+IO.startGame = function(times) {
+
+  // rl = IO.input();
   times ++;
-var validate = new Promise(function(){
 
-});
-var getScore = function(){
+  console.log('Please input four number:');
 
-};
+  rl.on('line', function(input) {
 
-  rl.question('Please input four number : \n', function(answer) {
+    this.inputArray = IO.invertIntType(_.toArray(input));
 
-  this.inputArray = IO.invertIntType(answer.split(''));
+    if(GameRule.IsFourNotRepeat(this.inputArray)) {
+      console.log('Repeat!');
+      IO.startGame(times);
+      return;
+    }
 
-  if(GameRule.IsFourNotRepeat(this.inputArray)) {
-    IO.showRepeat();
-    return;
-  }
-  var score = GameRule.getScore(IO.formFourNumber, this.inputArray);
+
+  var score = GameRule.getScore([4,3,8,1], this.inputArray);
+  //console.log('-------' + this.inputArray + '----------' + score);
 
   if(score === '4A0B') {
-    IO.showCongratulation();
+    console.log('Congratulation!');
+    process.exit(0);
+
+  } else if(times === 6) {
+    console.log('Game Over!');
+    rl.close();
+
   } else {
-    a = times === 6 ? IO.showGameOver() : IO.showScore(score);
+    console.log(score);
+    IO.startGame(times);
   }
-
-  // score === '4A0B' ? IO.showCongratulation() : (times === 6 ? IO.showGameOver() : IO.showScore(score));
   });
-
-};
-
-IO.showRepeat = function() {
-  console.log('Repeat!');
-  IO.consoleInput();
-};
-
-IO.showScore = function(score) {
-  console.log(score);
-  IO.consoleInput();
-};
-
-IO.showCongratulation = function() {
-  console.log('Congratulation!');
-  process.exit(0);
-};
-
-IO.showGameOver = function() {
-  console.log('Game Over!');
-  process.exit(0);
 };
 
 IO.invertIntType = function(array) {
